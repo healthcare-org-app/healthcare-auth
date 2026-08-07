@@ -1,0 +1,13 @@
+name: auth-service
+port: 8002
+lang: python
+description: "auth-service \u2014 domain: auth"
+http_deps:
+- identity-service
+- authorization-service
+- audit-log-service
+publishes:
+- auth.session.started
+- audit.event
+subscribes:
+- identity.user.deactivated
